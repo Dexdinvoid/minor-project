@@ -1,0 +1,18 @@
+{
+  "name": "@sc/client",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@sc/shared": "workspace:*", "@sc/crypto": "workspace:*", "@sc/ipfs": "workspace:*", "@sc/ledger": "workspace:*"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  }
+}

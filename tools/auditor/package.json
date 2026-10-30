@@ -1,0 +1,8 @@
+{
+  "name": "@sc/auditor",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@sc/shared": "workspace:*", "@sc/crypto": "workspace:*", "@sc/ipfs": "workspace:*", "@sc/ledger": "workspace:*" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json", "build": "tsc -p tsconfig.json", "lint": "eslint .", "test": "echo \"no unit tests\"" }
+}

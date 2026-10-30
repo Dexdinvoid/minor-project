@@ -1,0 +1,52 @@
+{
+  "name": "secure-chat",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Verifiable Private Messaging: E2EE chat (X3DH + Double Ratchet) with IPFS blobs and Merkle-anchored proofs on an EVM chain.",
+  "scripts": {
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "test:contracts": "pnpm --filter @sc/contracts test",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:e2e": "pnpm --filter @sc/client test:e2e",
+    "dev:client": "pnpm --filter @sc/client dev",
+    "stack:up": "docker compose up -d",
+    "stack:down": "docker compose down",
+    "eval": "tsx tools/eval/index.ts",
+    "auditor": "tsx tools/auditor/index.ts",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.6.3",
+    "dotenv": "18.0.4",
+    "eslint": "10.11.0",
+    "husky": "9.1.7",
+    "lint-staged": "17.6.0",
+    "prettier": "3.9.9",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "typescript-eslint": "8.70.1",
+    "vitest": "5.0.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@playwright/test",
+      "better-sqlite3",
+      "core-js",
+      "esbuild",
+      "keccak",
+      "libsodium-wrappers-sumo",
+      "secp256k1"
+    ]
+  }
+}

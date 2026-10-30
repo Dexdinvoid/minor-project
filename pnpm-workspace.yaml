@@ -1,0 +1,9 @@
+packages:
+  - "packages/*"
+  - "contracts"
+  - "tools/*"
+# Version policy (ARCHITECTURE_AND_TECH_STACK.md): never install a release younger than 14 days.
+# Needs pnpm >= 10.16. 20160 minutes = 14 days.
+allowBuilds:
+  esbuild: true
+minimumReleaseAge: 20160

@@ -1,0 +1,16 @@
+{
+  "name": "@sc/relay",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/server.ts",
+  "dependencies": { "@sc/shared": "workspace:*", "@sc/crypto": "workspace:*", "@sc/ipfs": "workspace:*" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint src test",
+    "test": "vitest run",
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts"
+  }
+}

@@ -1,0 +1,13 @@
+# Local IPFS node (Kubo). The RPC API is bound to 127.0.0.1 ONLY: it must never be exposed (pitfall S3).
+# Set KUBO_IMAGE to an exact, verified tag (docs/DECISIONS.md D-008); no floating tags.
+services:
+  kubo:
+    image: ${KUBO_IMAGE:?set KUBO_IMAGE in .env to a pinned ipfs/kubo tag}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5001:5001"   # RPC API: loopback only
+      - "4001:4001"             # swarm (p2p)
+    volumes:
+      - kubo-data:/data/ipfs
+volumes:
+  kubo-data:

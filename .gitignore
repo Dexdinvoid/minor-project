@@ -1,0 +1,15 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+*.db
+*.db-wal
+*.db-shm
+artifacts
+cache
+typechain-types
+coverage
+metrics.csv
+playwright-report
+test-results

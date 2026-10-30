@@ -1,0 +1,23 @@
+{
+  "name": "@sc/ipfs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./node": "./src/node.ts"
+  },
+  "dependencies": {
+    "@sc/shared": "workspace:*",
+    "kubo-rpc-client": "7.1.0",
+    "multiformats": "14.0.5"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint src test",
+    "test": "vitest run"
+  }
+}
